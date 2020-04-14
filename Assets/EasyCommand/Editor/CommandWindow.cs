@@ -41,7 +41,7 @@ namespace EasyCommand
             }
 
             GUILayout.Space(5);
-            if (GUILayout.Button("测试", GUILayout.Height(30)))
+            if (GUILayout.Button("测试", GUILayout.Height(30), GUILayout.Width(80)))
             {
                 commandListener.TestCommand();
             }

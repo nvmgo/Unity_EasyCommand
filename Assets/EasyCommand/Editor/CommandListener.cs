@@ -158,7 +158,7 @@ namespace EasyCommand
             data.Add("logFile", "xxxxxxx");
 
             string jsonParam = MiniJSON.Json.Serialize(data);
-            Debug.Log("[发出测试命令]=" + jsonParam);
+            Debug.Log("[测试命令-发出]=" + jsonParam);
             byte[] body = Encoding.UTF8.GetBytes(jsonParam);
             UnityWebRequest request = new UnityWebRequest(CommandConfig.LintenAddress, "POST");
             request.uploadHandler = new UploadHandlerRaw(body);
@@ -167,7 +167,7 @@ namespace EasyCommand
             UnityWebRequestAsyncOperation requestAsync = request.SendWebRequest();
             requestAsync.completed += (option) =>
             {
-                Debug.Log("[收到测试命令]=" + request.downloadHandler.text);
+                Debug.Log("[测试命令-返回]=" + request.downloadHandler.text);
             };
         }
     }
